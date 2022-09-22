@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <div class="container"> 
+
+        <div class="container-header"> 
+            This is the Tic Tac Toe Project 
+        </div>
+
+        <div class="container-body">
+
+        <button class="openform">Click here if you want to play ! </button>
+
+        <div class="playerData">
+            <div class="formHeader">
+            <h1> This is the Player Selection </h1>
+            <button class="closeform"> &times </button>
+        </div>
+
+        <label> Player n°1 : *  </label><div class="invalid-input"><input type="text" id="player1"><p class="invalid-x">  </p></div>
+        <label> Player n°2 : * </label><div class="invalid-input"><input type="text" id="player2"><p class="invalid-y"> </p></div>
+
+        <button class="play"> Start playing ! </button>
+
+        </div>
+
+
+        <h1 id="playerturn"> </h1>
+
+        <div class="tics"> 
+            <div class="tic" data-order="1"> </div>
+            <div class="tic" data-order="2"> </div>
+            <div class="tic" data-order="3"> </div>
+
+            <div class="tic" data-order="4"> </div>
+            <div class="tic"> </div>
+            <div class="tic" data-order="6"> </div>
+
+            <div class="tic" data-order="7"> </div>
+            <div class="tic" data-order="8"> </div>
+            <div class="tic" data-order="9"> </div>
+        </div>
+
+        <button id="restart"> Restart </button>
+
+        </div>
+        </div>
+
+    <div class="congratulation">
+
+        <div class="congrat-header">
+        <h1>
+            Congratulation!
+        </h1>
+
+        <button class="closecongra"> &times </button>
+        </div>
+
+        <img src="images/congrat.png" alt="">
+
+        <h1 class="winner"> </h1>
+        <p class="winnerround"> 
+           </p>
+
+        <div class="congrat-footer">
+        <button class="replay1"> Play Again With the Same Players  </button>
+        <button class="replay2"> Play Again With Different Players  </button>
+        </div>
+
+    </div>
+
+
+    <div id="overlay"> </div>
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

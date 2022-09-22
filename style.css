@@ -1,0 +1,346 @@
+*{
+    margin : 0px;
+    padding : 0px;
+    --main-color : #012659;
+    --secondary-color : #a5f3fc;
+}
+
+
+/** Container **/ 
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 40px;
+    height : 100%;
+    background-color: #dbeafe;
+}
+
+.container-header {
+    width: 100%;
+    background-color : var(--main-color);
+    font-size : 4em;
+    color : var(--secondary-color);
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    border-bottom : 4px solid black;
+
+}
+
+
+/** Tic Tac Toe **/ 
+
+.tics {
+    border : 3px solid var(--main-color);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    background-color: white;
+    height : 450px;
+    width: 450px;
+    margin-bottom : 30px;
+    pointer-events : none;
+}
+
+.tics.active {
+    pointer-events : auto;
+}
+
+.tic {
+    border : 1px solid black;
+    padding : 10px;
+    font-size : 90px;
+    color : black;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+
+
+
+.tic:hover {
+    background-color : #eef2ff;
+}
+
+div[data-order="1"] {
+    border-top : 0px;
+    border-left : 0px;
+}
+
+div[data-order="2"] {
+    border-top : 0px;
+}
+
+div[data-order="3"] {
+    border-top : 0px;
+    border-right : 0px;
+}
+
+div[data-order="4"] {
+    border-left : 0px;
+}
+
+div[data-order="6"] {
+    border-right : 0px;
+}
+
+div[data-order="7"] {
+    border-left : 0px;
+    border-bottom : 0px;
+}
+
+div[data-order="8"] {
+    border-bottom : 0px;
+}
+
+div[data-order="9"] {
+    border-right : 0px;
+    border-bottom : 0px;
+}
+
+/** Container Body **/ 
+
+.container-body {
+display: flex;
+flex-direction: column;
+gap : 20px;
+justify-content: center;
+align-items: center;
+}
+
+#playerturn {
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+}
+
+/** Player Data Form **/ 
+
+.playerData {
+    width: 450px;
+    height : 370px;
+    border : 2px solid black;
+    display: flex;
+    flex-direction: column;
+    position : fixed;
+    top : 40%;
+    left : 50%;
+    transform : translate(-50%, -50%) scale(0);
+    transition : 200ms ease-in-out;
+    z-index : 10;
+    background-color: white;
+    align-items: center;
+    gap : 12px;
+    font-family: 'Cairo', sans-serif;
+    border-radius: 15px;
+}
+
+.playerData input {
+    width: 200px;
+    border-radius : 5px;
+    border-color : var(--main-color);
+    font-size : 1.4em;
+    text-align: center;
+}
+
+
+.playerData.active {
+    transform : translate(-50%, -50%) scale(1);
+}
+
+.playerData label {
+    font-size : 1.5em;
+}
+
+
+.invalid-input {
+    display: flex;
+    color : red;
+    gap : 15px;
+}
+
+
+#player1.invalid, #player2.invalid {
+    border-color : red;
+    margin-left : 12px;
+}
+
+.formHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 30px;
+    background-color: var(--main-color);
+    color : #ede9fe;
+    width: 100%;
+}
+
+
+
+.openform {
+    font-family: 'Cairo', sans-serif;
+    color : white;
+    font-size : 1.6em;
+    background-color :var(--main-color);
+    border : 2px solid black;
+    border-radius : 10px;
+    padding : 10px;
+    width: 360px;
+}
+
+.openform:hover{
+    background-color: #1e3a8a;
+}
+
+
+#restart {
+        font-family: 'Cairo', sans-serif;
+        color : var(--secondary-color);
+        font-size : 40px;
+        background-color :var(--main-color);
+        border : 4px solid black;
+        border-radius : 10px;
+        width: 200px;
+        height: 90px;
+}
+
+#restart:hover {
+    background-color: #1e3a8a;
+
+}
+
+
+.closeform {
+    font-size : 2.5em;
+    border : none;
+    outline : none;
+    background : none;
+    cursor : pointer;
+    color : white;
+}
+
+.play {
+    font-family: 'Cairo', sans-serif;
+    color : var(--secondary-color);
+    font-size : 20px;
+    background-color :var(--main-color);
+    border : 4px solid black;
+    border-radius : 10px;
+    width : 140px;
+    height : 60px;
+    margin-top : 20px;
+}
+
+
+
+/** Congratulation popup **/ 
+.congratulation {
+    width: 400px;
+    height : 460px;
+    border : 2px solid black;
+    display: flex;
+    flex-direction: column;
+    gap : 15px;
+    top : 40%;
+    left : 50%;
+    transform : translate(-50%, -50%) scale(0);
+    transition : 400ms ease-in-out;
+    position: fixed;
+    align-items: center;
+    border-radius : 15px;
+    background-image: url(images/white-stars.jpeg);
+    background-size : cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    z-index: 10;
+}
+
+.congratulation.active {
+    transform : translate(-50%, -50%) scale(1);
+}
+
+.congrat-header {
+    display: flex;
+    gap : 20%;
+    padding : 5px;
+    font-size : 1.1em;
+    padding : 20px;
+}
+
+.closecongra {
+    font-size : 2em;
+    border : none;
+    outline : none;
+    background : none;
+    cursor : pointer;
+}
+
+
+
+.congratulation p {
+    padding : 0px 10px;
+    line-height: 30px;
+    text-align: center;
+    font-size : 1.1em;
+    padding : 0px 10px;
+}
+
+.congratulation img {
+    width: 80px;
+    height: 80px;
+}
+
+.congrat-footer {
+    background-color : var(--main-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap : 15px;
+    border-radius : 15px 15px 0px 0px;
+}
+
+.replay1, .replay2 {
+    background-color: white;
+    border-radius : 20px;
+    color : var(--main-color);
+    padding : 6px 15px;
+    border : none;
+    font-family: 'Roboto', sans-serif;
+    cursor : pointer;
+    font-size : 1.1em;
+}
+
+.replay1:hover, .replay2:hover {
+    color : red;
+}
+
+.winner {
+    color : var(--main-color);
+    font-size : 3em;
+}
+
+
+
+/** Overlay **/ 
+
+#overlay {
+    position : fixed;
+    opacity: 0;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom : 0;
+    background-color : rgba(0,0,0, .5);
+    pointer-events: none;
+    transition : 300ms ease-in-out;
+}
+
+#overlay.active {
+    opacity : 1;
+    pointer-events: all;
+}
+
